@@ -3,12 +3,12 @@ import OutOfStockPlaceholder from '../../Images/NotAvailablePlaceholder.svg';
 import InStockPlaceholder from '../../Images/AvaialblePlaceholder.svg';
 const Card = ({data}) => {
   return (
-<div className="card bg-light Card" style={{ width: '250px', margin: '50px' }}>
+<div className={` card bg-light Card ${data.availability ? '' : 'NotAvailableCar'}`} style={{ width: '250px', margin: '50px' }}>
     <div className="card-header bg-dark"><h4 class="card-title text-light">
        {data.car}
         </h4>
         <div className="CardSubHeader">
-            <h6 className="text-danger">{data.availability? "Availability" :"Out Of Stock"}</h6>  
+            <h6 className={`${data.availability ? 'text-success' : 'text-danger'}`}>{data.availability? "Availability" :"Out Of Stock"} </h6>  
              <i className="fa-regular fa-trash-can text-danger"></i> 
         </div>
   
