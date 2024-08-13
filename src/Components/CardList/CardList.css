@@ -4,9 +4,18 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-/* label{
-    margin-top:45px;
+.DropDownContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+label{
+    margin-top:20px;
+}
+label,select{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 p{
     text-align: center;
-} */
+}
