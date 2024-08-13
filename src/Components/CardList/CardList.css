@@ -1,0 +1,12 @@
+.CardsList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* label{
+    margin-top:45px;
+}
+p{
+    text-align: center;
+} */

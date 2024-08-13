@@ -2,29 +2,26 @@ import Card from '../Card/Card.jsx';
 import { useEffect,useState} from 'react';
 import './CardList.css';
 const CardList = () => {
-    const [Car,setCars] = useState({
-        id:"",
-        car_model:"",
-        color:""
-   });
+    const [cars,setCars] = useState([]);
 
 
    useEffect(()=>{
         fetch("https://myfakeapi.com/api/cars")
         .then((data)=> data.json())
         .then((fetchedData)=> {
-             setCars(fetchedData.cars[0])
-        })
+             setCars(fetchedData.cars)
+             const FiftyCard=fetchedData.cars.slice(0,50);
+             setCars(FiftyCard);
+        }).catch((error) => console.error('Error fetching data:', error));
    },[])     
-
+   const carCards=cars.map((car)=>(
+   <Card data={car}/>
+   ))
 
    return(
-        <>
-             {/* <div>id: {Car.id}</div>
-             <div>car :{Car.car_model}</div>
-             <div>car :{Car.car}</div> */
-             <Card data={Car}/>}
-        </>
+        <div className="CardsList"> 
+            {carCards}
+        </div>
    )
   
 }

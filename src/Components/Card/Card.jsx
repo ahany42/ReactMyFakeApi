@@ -8,7 +8,7 @@ const Card = ({data}) => {
        {data.car}
         </h4>
         <div className="CardSubHeader">
-            <h6 className={`${data.availability ? 'text-success' : 'text-danger'}`}>{data.availability? "Availability" :"Out Of Stock"} </h6>  
+            <h6 className={`${data.availability ? 'text-success' : 'text-danger'}`}>{data.availability? "Available" :"Out Of Stock"} </h6>  
              <i className="fa-regular fa-trash-can text-danger"></i> 
         </div>
   
