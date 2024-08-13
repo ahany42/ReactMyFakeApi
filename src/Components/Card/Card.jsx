@@ -7,12 +7,7 @@ const Card = ({data}) => {
     <div className="card-header bg-dark"><h4 class="card-title text-light">
        {data.car}
         </h4>
-        <div className="CardSubHeader">
             <h6 className={`${data.availability ? 'text-success' : 'text-danger'}`}>{data.availability? "Available" :"Out Of Stock"} </h6>  
-             <i className="fa-regular fa-trash-can text-danger"></i> 
-        </div>
-  
-   
     </div>
         <img src={data.availability? InStockPlaceholder: OutOfStockPlaceholder  } alt="Placeholder Image"/>
     <div class="card-body">{data.car_color} {data.car_model} {data.car_model_year}  
