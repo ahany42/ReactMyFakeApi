@@ -1,29 +1,26 @@
 import './Card.css';
 import OutOfStockPlaceholder from '../../Images/NotAvailablePlaceholder.svg';
-
-const Card = () => {
+import InStockPlaceholder from '../../Images/AvaialblePlaceholder.svg';
+const Card = ({data}) => {
   return (
 <div className="card bg-light Card" style={{ width: '250px', margin: '50px' }}>
     <div className="card-header bg-dark"><h4 class="card-title text-light">
-        Nissan
+       {data.car}
         </h4>
         <div className="CardSubHeader">
-            <h6 className="text-danger">Out Of Stock</h6>  
-            <div className="Icons">
-                <i className="fa-solid fa-pen text-light"></i> 
-                <i className="fa-regular fa-trash-can text-danger"></i>
-            </div>
+            <h6 className="text-danger">{data.availability? "Availability" :"Out Of Stock"}</h6>  
+             <i className="fa-regular fa-trash-can text-danger"></i> 
         </div>
   
    
     </div>
-        <img src={OutOfStockPlaceholder} alt="Placeholder Image"/>
-    <div class="card-body">Blue Sunny 2018
+        <img src={data.availability? InStockPlaceholder: OutOfStockPlaceholder  } alt="Placeholder Image"/>
+    <div class="card-body">{data.car_color} {data.car_model} {data.car_model_year}  
         <br/>
-        $2814
+        {data.price}
     </div>
     <div class="card-footer">
-            <a href="https://github.com/ahany42"><button class="bg-dark text-light">Buy</button></a>
+            <a href="https://github.com/ahany42"><button class="bg-dark text-light">{data.availability? "Buy" : "Notify Me"}</button></a>
     </div>
 </div>
   )
